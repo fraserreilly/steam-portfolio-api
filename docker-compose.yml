@@ -1,0 +1,29 @@
+version: '3.8'
+services:
+  dev-db:
+    image: postgres:13
+    restart: always
+    ports:
+      - 5435:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: d3a85e8a413d8fee4894e28c32decfc1
+      POSTGRES_DB: steam_db_dev
+  test-db:
+    image: postgres:13
+    restart: always
+    ports:
+      - 5436:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1ed608ddea75fe6939464dac0e992935
+      POSTGRES_DB: steam_db_test
+  prod-db:
+    image: postgres:13
+    restart: always
+    ports:
+      - 5434:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: d0cac532c35e1ee3838837db13934a05
+      POSTGRES_DB: steam_db
